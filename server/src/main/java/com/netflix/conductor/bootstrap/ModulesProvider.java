@@ -12,6 +12,7 @@ import com.netflix.conductor.contribs.json.JsonJqTransform;
 import com.netflix.conductor.contribs.kafka.KafkaProducerManager;
 import com.netflix.conductor.contribs.kafka.KafkaPublishTask;
 import com.netflix.conductor.core.config.Configuration;
+import com.netflix.conductor.core.config.JacksonModule;
 import com.netflix.conductor.core.utils.NoopLockModule;
 import com.netflix.conductor.core.execution.WorkflowExecutorModule;
 import com.netflix.conductor.core.utils.DummyPayloadStorage;
@@ -64,6 +65,8 @@ public class ModulesProvider implements Provider<List<AbstractModule>> {
     private List<AbstractModule> selectModulesToLoad() {
         Configuration.DB database;
         List<AbstractModule> modules = new ArrayList<>();
+
+        modules.add(new JacksonModule());
 
         try {
             database = configuration.getDB();
