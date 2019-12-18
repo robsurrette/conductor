@@ -23,6 +23,7 @@ import com.google.inject.multibindings.MultibindingsScanner;
 import com.google.inject.multibindings.ProvidesIntoMap;
 import com.google.inject.multibindings.StringMapKey;
 import com.google.inject.name.Named;
+import com.netflix.conductor.common.utils.JsonMapperProvider;
 import com.netflix.conductor.core.events.ActionProcessor;
 import com.netflix.conductor.core.events.EventProcessor;
 import com.netflix.conductor.core.events.EventQueueProvider;
